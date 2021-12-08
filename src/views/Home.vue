@@ -9,9 +9,6 @@
           :chartList="chartsList"
         />
 
-        <!-- <div class="empty_div" v-else>
-          <EmptyData />
-        </div> -->
       </div>
     </div>
   </div>
@@ -19,11 +16,9 @@
 
 <script>
 import Charts from '@/components/Charts'
-// import EmptyData from '@/components/EmptyData'
 export default {
   components: {
     Charts,
-    // EmptyData
   },
   data () {
     return {
@@ -36,7 +31,6 @@ export default {
   methods: {
     getEchartsData () {
       this.$axios('/echarts/humanrelation').then((res) => {
-        // console.log(res);
         this.chartsList = [res.data.data.nodes, res.data.data.ships]
       })
 
